@@ -13,6 +13,7 @@ const Deities = () => {
     time: deitiesPageData.details?.time || "All Day",
   }));
 
+  
   return (
     <>
       <Helmet>
