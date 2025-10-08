@@ -1,0 +1,319 @@
+/* Global style */
+:root {
+  --color-primary: #8b0000;
+  --color-offwhite: #f8f0f0;
+  --color-cream: #fdf2e9;
+  --color-facebook: #1877f2;
+  --color-instagram-yellow: #e2a127;
+  --color-instagram-pink: #d62976;
+  --color-instagram-purple: #962fbf;
+  --color-youtube: #ff0000;
+  --color-brown-dark: #2b0a09;
+  --color-gray-200: #ddd;
+  --color-gray-700: #333;
+  --color-burgundy: #4b0000;
+  --color-accent-gold: #ffc107;
+  --color-gray-100: #f5f5f5;
+  --color-white: #fff;
+  --color-link: #800000;
+  --color-overlay-maroon: rgba(128, 0, 0, 0.308);
+  --color-accent-yellow: #ffd700;
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-accent-gold-dark: #e0a800;
+  --color-hover-bg: #f8f9fa;
+}
+.heading {
+  color: var(--color-primary) !important;
+  font-family: "Lora", serif;
+}
+.icon-style {
+  font-size: 35px;
+  background-color: var(--color-offwhite);
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+.title {
+  animation: typing 4s steps(50, end) 1s forwards,
+    blink-caret 0.75s step-end infinite;
+  white-space: nowrap;
+}
+/* Visual Journey*/
+.carousel-overlay {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+.custom-border {
+  border: 2px solid var(--color-primary);
+  height: 40px;
+  width: 40px;
+}
+.upcoming-events {
+  background: var(--color-cream);
+  min-height: 600px;
+}
+.event-card {
+  background: linear-gradient(to bottom, #f3b360, #fff);
+}
+
+.form-control {
+  height: 60px;
+}
+.visual-journey-container img {
+  transition: transform 0.3s;
+}
+.visual-journey-container img:hover {
+  transform: scale(1.05);
+}
+/* Footer */
+.footer-section {
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-image: url("../images/footerbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.footer-logo {
+  width: 550px;
+  height: 220px;
+}
+/* Header */
+.navbar-toggler-icon {
+  font-size: 28px;
+}
+.social-icon {
+  transition: transform 0.3s ease;
+}
+.social-icon:hover {
+  transform: scale(1.1);
+}
+.facebook-icon {
+  background-color: var(--color-facebook);
+}
+.instagram-icon {
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--color-instagram-yellow),
+    var(--color-instagram-pink),
+    var(--color-instagram-purple)
+  );
+}
+.youtube-icon {
+  background-color: var(--color-youtube);
+}
+.footer-bottom {
+  background-color: var(--color-brown-dark);
+  color: var(--color-gray-200);
+}
+.card-text .schedule-title .schedule-time .service-title {
+  color: var(--color-gray-700);
+}
+.full-width-background {
+  background-color: var(--color-burgundy);
+  width: 100%;
+  z-index: 1000;
+  transition: position 0.3s ease;
+}
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.logo {
+  height: 60px;
+}
+.nav-link-custom:hover {
+  color: var(--color-accent-gold) !important;
+  text-decoration: none;
+}
+.nav-link:hover {
+  color: var(--color-accent-gold) !important;
+}
+.offcanvas-custom {
+  background: var(--color-burgundy) !important;
+  font-family: "Arial", sans-serif;
+}
+.offcanvas-custom .nav-link-custom {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--color-gray-100);
+  margin: 20px 0;
+  transition: color 0.3s ease;
+}
+.offcanvas-custom .nav-link-custom:hover {
+  color: var(--color-accent-gold);
+}
+.offcanvas-custom .btn-close {
+  color: var(--color-white);
+  filter: brightness(2) invert(1);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.2rem;
+  z-index: 1051;
+  opacity: 0.9;
+}
+.offcanvas-custom .offcanvas-body {
+  background-color: var(--color-burgundy);
+}
+/* contact */
+.contact-card {
+  cursor: pointer;
+}
+.contact-card:hover {
+  background-color: var(--color-hover-bg);
+}
+a {
+  text-decoration: none !important;
+  color: var(--color-link);
+  font-weight: 700;
+}
+a:hover {
+  color: var(--color-link);
+  text-decoration: none;
+}
+.TempleServices {
+  background-image: url("../images/temple.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+/*  About  */
+.about-banner-section {
+  background-image: url("../images/image.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.about-banner-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-overlay-maroon);
+  z-index: 1;
+}
+.about-banner-section > * {
+  position: relative;
+  z-index: 2;
+}
+.about-banner-section .breadcrumb {
+  background: transparent;
+}
+.about-banner-section .breadcrumb-item + .breadcrumb-item::before {
+  display: none;
+}
+.about-banner-section .breadcrumb-item a:hover {
+  color: var(--color-accent-yellow) !important;
+  text-decoration: underline !important;
+}
+.about-banner-section .breadcrumb-item.active {
+  color: var(--color-white-80) !important;
+}
+/* Donation Button Styles */
+.hover-button {
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hover-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.hover-button:hover::before {
+  border-color: var(--color-accent-gold-dark);
+  inset: -4px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.service-display {
+  max-width: 450px;
+}
+@media (max-width: 768px) {
+  .contact-card {
+    border: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .footer-logo {
+    width: 320px;
+    height: 150px;
+    margin: 0;
+  }
+  .responsive-position {
+    height: 60px;
+    bottom: -80px;
+    width: 200px;
+    left: 23%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-white);
+  }
+}
+@keyframes resetText {
+  0%,
+  55% {
+    visibility: visible;
+  }
+  56%,
+  100% {
+    visibility: hidden;
+  }
+}
+@media (max-width: 600px) {
+  .mySwiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel-image {
+    width: 350px;
+    height: 400px;
+  }
+}
+@media (min-width: 768px) {
+  .responsive-position {
+    bottom: 43px;
+    right: 30px;
+    height: 60px;
+  }
+  .carousel-image {
+    width: 250px;
+    height: 400px;
+  }
+}
