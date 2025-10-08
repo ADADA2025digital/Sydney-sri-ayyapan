@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
-import Logo from "../assets/Images/Logo.png";
+import Logo from "../assets/images/Logo.png";
 
 const Header = () => {
   const [isFixed, setIsFixed] = useState(false);

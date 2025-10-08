@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { motion } from "framer-motion";
-import AboutImg from "../assets/Images/about.png";
+import AboutImg from "../assets/images/about.png";
 import CustomCarousel from "../Components/CustomCarousel";
 import TempleServices from "../Components/TempleServices";
 import EventCard from "../Components/EventCard";
@@ -242,7 +242,7 @@ const Home = ({
               muted
               playsInline
               className="w-100 h-100 object-fit-cover"
-              poster="../assets/Images/video-poster.jpg"
+              poster="../assets/images/video-poster.jpg"
             >
               <source src={HeroVideo} type="video/mp4" />
               Your browser does not support the video tag.

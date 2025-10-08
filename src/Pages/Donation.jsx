@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Banner from "../Components/Banner";
-import payImage from "../assets/Images/pay.png";
+import payImage from "../assets/images/pay.png";
 import { donationPageData } from "../Constants/Data.jsx";
 import { Helmet } from "react-helmet-async";
 

@@ -1,12 +1,12 @@
-import Img1 from "../assets/Images/01.png";
-import Img2 from "../assets/Images/02.png";
-import Img3 from "../assets/Images/03.png";
-import Img4 from "../assets/Images/04.png";
-import Img5 from "../assets/Images/05.png";
-import Img6 from "../assets/Images/06.png";
-import Service1 from "../assets/Images/Daily Poojas and Rituals.png";
-import Service2 from "../assets/Images/Educational Programs.png";
-import Service3 from "../assets/Images/Special Sevas and Offerings.png";
+import Img1 from "../assets/images/01.png";
+import Img2 from "../assets/images/02.png";
+import Img3 from "../assets/images/03.png";
+import Img4 from "../assets/images/04.png";
+import Img5 from "../assets/images/05.png";
+import Img6 from "../assets/images/06.png";
+import Service1 from "../assets/images/Daily Poojas and Rituals.png";
+import Service2 from "../assets/images/Educational Programs.png";
+import Service3 from "../assets/images/Special Sevas and Offerings.png";
 
 // Pooja Images Array
 export const poojaImages = [Img1, Img2, Img3, Img4, Img5, Img6];
