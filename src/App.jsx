@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./assets/styles/Style.css";
+import "./assets/styles/style.css";
 
 // Layout
 import Header from "./Components/Header";
