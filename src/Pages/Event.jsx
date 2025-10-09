@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Banner from "../Components/Banner";
-import { events, eventImages, eventPageData } from "../Constants/Data.jsx";
+import { events, eventImages, eventPageData } from "../Constants/data.jsx";
 import { Helmet } from "react-helmet-async";
 
 const Event = () => {

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Banner from "../Components/Banner";
 import ServicesDisplay from "../Components/ServicesDisplay";
-import { servicesData, servicesPageData } from "../Constants/Data.jsx";
+import { servicesData, servicesPageData } from "../Constants/data.jsx";
 import { Helmet } from "react-helmet-async";
 
 const Services = () => {

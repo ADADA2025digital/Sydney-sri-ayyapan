@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Banner from "../Components/Banner";
 import payImage from "../assets/images/pay.png";
-import { donationPageData } from "../Constants/Data.jsx";
+import { donationPageData } from "../Constants/data.jsx";
 import { Helmet } from "react-helmet-async";
 
 const Donation = () => {

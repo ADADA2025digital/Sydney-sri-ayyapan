@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Banner from "../Components/Banner";
-import { deities, deitiesImages, deitiesPageData } from "../Constants/Data.jsx";
+import { deities, deitiesImages, deitiesPageData } from "../Constants/data.jsx";
 import { Helmet } from "react-helmet-async";
 
 const Deities = () => {

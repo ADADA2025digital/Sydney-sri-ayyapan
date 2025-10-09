@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Banner from "../Components/Banner";
-import { contactPageData } from "../Constants/Data.jsx";
+import { contactPageData } from "../Constants/data.jsx";
 import { Helmet } from "react-helmet-async";
 
 const ContactUs = () => {

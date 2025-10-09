@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import AboutImg from "../assets/images/about.png";
 import TempleServices from "../Components/TempleServices";
 import Banner from "../Components/Banner";
-import { servicesData, aboutUsPageData } from "../Constants/Data.jsx";
+import { servicesData, aboutUsPageData } from "../Constants/data.jsx";
 import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
