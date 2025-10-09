@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Banner from "../Components/Banner";
 import { contactPageData } from "../Constants/data.jsx";
 import { Helmet } from "react-helmet-async";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactUs = () => {
+  const RECAPTCHA_SITE_KEY = "6Ld16dcrAAAAALK46kuJ9CLYZSqFKWW-xuoFOvfc";
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -18,10 +21,35 @@ const ContactUs = () => {
     email: "",
     phone: "",
     message: "",
+    recaptcha: "",
   });
 
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const recaptchaRef = useRef(null);
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    // Show reCAPTCHA only when user starts typing in message field
+    if (name === "message" && value.length > 0) {
+      setShowCaptcha(true);
+    } else if (name === "message" && value.length === 0) {
+      setShowCaptcha(false);
+      // Reset reCAPTCHA when message is cleared
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+    }
+  };
+
+  const onCaptchaChange = (value) => {
+    // Clear reCAPTCHA error when user verifies
+    if (value) {
+      setErrors({ ...errors, recaptcha: "" });
+    }
   };
 
   const validateForm = () => {
@@ -76,15 +104,50 @@ const ContactUs = () => {
       valid = false;
     }
 
+    // reCAPTCHA validation (only if message has content and form not submitted)
+    if (formData.message.length > 0 && !submitted) {
+      const recaptchaValue = recaptchaRef.current.getValue();
+      if (!recaptchaValue) {
+        newErrors.recaptcha = "Please verify that you are not a robot.";
+        valid = false;
+      }
+    }
+
     setErrors(newErrors);
     return valid;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitted(true);
+
     if (validateForm()) {
       // Form is valid, proceed with submission
       console.log("Form submitted:", formData);
+
+      // Show success message
+      setShowSuccess(true);
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      setShowCaptcha(false);
+      setSubmitted(false);
+
+      // Reset reCAPTCHA
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 5000);
     }
   };
 
@@ -270,7 +333,7 @@ const ContactUs = () => {
                 </div>
               </div>
 
-              <div className="mb-5 md-mb-3 position-relative col-12">
+              <div className="mb-3 position-relative col-12">
                 <textarea
                   name="message"
                   value={formData.message}
@@ -291,6 +354,37 @@ const ContactUs = () => {
                   SEND
                 </button>
               </div>
+              {/* reCAPTCHA Section - Exactly as you specified */}
+              {showCaptcha && !submitted && (
+                <div className="mb-3 d-flex justify-content-start">
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={RECAPTCHA_SITE_KEY}
+                    onChange={onCaptchaChange}
+                  />
+                  {errors.recaptcha && (
+                    <small className="text-danger ms-3 align-self-center">
+                      {errors.recaptcha}
+                    </small>
+                  )}
+                </div>
+              )}
+
+              {/* Success Message */}
+              {showSuccess && (
+                <div
+                  className="alert alert-success alert-dismissible fade show"
+                  role="alert"
+                >
+                  <strong>Success!</strong> Your message has been sent
+                  successfully.
+                  <button
+                    type="button"
+                    className="btn-close"
+                    onClick={() => setShowSuccess(false)}
+                  ></button>
+                </div>
+              )}
             </form>
           </div>
         </section>
