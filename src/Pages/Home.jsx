@@ -20,7 +20,7 @@ import {
   upcomingEventsContent,
   visualJourneyContent,
   carouselSettings,
-} from "../Constants/Data.jsx";
+} from "../Constants/data.jsx";
 import HeroVideo from "../assets/Videos/video.mp4";
 
 const Home = ({
