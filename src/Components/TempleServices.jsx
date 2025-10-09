@@ -2,36 +2,36 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "react-bootstrap-icons";
-
+ 
 const TempleServices = ({ services }) => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const servicesRef = useRef(null);
-
+ 
   const handleServiceClick = (serviceId) => {
     navigate(`/service/${serviceId}`);
   };
-
+ 
   // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-
+ 
     checkMobile();
     window.addEventListener("resize", checkMobile);
-
+ 
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
+ 
   // Handle next service
   const handleNext = () => {
     if (isMobile) {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
     }
   };
-
+ 
   // Handle previous service
   const handlePrev = () => {
     if (isMobile) {
@@ -40,34 +40,34 @@ const TempleServices = ({ services }) => {
       );
     }
   };
-
+ 
   // Touch scroll functionality
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-
+ 
   const onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
-
+ 
   const onTouchMove = (e) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
-
+ 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-
+ 
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
-
+ 
     if (isLeftSwipe) {
       handleNext();
     } else if (isRightSwipe) {
       handlePrev();
     }
   };
-
+ 
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -97,7 +97,7 @@ const TempleServices = ({ services }) => {
         >
           Connecting Devotees Through Spiritual Temple Services
         </motion.h1>
-
+ 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -123,9 +123,10 @@ const TempleServices = ({ services }) => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <div>
+                  <div   style={{ height: "380px" }}   >
                     <div
-                      className="card shadow-sm p-3 mb-5 bg-white h-100 border-0 rounded-5 cursor-pointer "
+                      className="card shadow-sm p-3 mb-5 bg-white h-100 border-0 rounded-5 cursor-pointer "  
+                             
                       onClick={() =>
                         handleServiceClick(services[currentIndex].id)
                       }
@@ -202,7 +203,7 @@ const TempleServices = ({ services }) => {
                 ))}
               </div>
             )}
-
+ 
             {/* Mobile Arrows - Only show on mobile */}
             {isMobile && (
               <motion.div
@@ -238,5 +239,5 @@ const TempleServices = ({ services }) => {
     </motion.div>
   );
 };
-
+ 
 export default TempleServices;
