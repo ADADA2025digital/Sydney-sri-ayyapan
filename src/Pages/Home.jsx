@@ -21,7 +21,7 @@ import {
   visualJourneyContent,
   carouselSettings,
 } from "../Constants/data.jsx";
-import HeroVideo from "../assets/Videos/video.mp4";
+import HeroVideo from "../assets/videos/video.mp4";
 
 const Home = ({
   items = poojaImages,
